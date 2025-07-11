@@ -8,6 +8,10 @@ public class FeatureFlag {
     @Value("${flag.key.value}")
     private static String FLAG;
 
+    public static boolean isFeatureEnabled(boolean feature){
+        return feature;
+    }
+
 
     public static void main(String[] args) {
         boolean toggled = true;
@@ -18,6 +22,7 @@ public class FeatureFlag {
             System.out.println("this feature is disabled");
         }
 
+        boolean result  = isFeatureEnabled(featureEnabled);
 
         if (!featureEnabled) {
             System.out.println("This feature is enabled.");
