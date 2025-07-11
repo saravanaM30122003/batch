@@ -18,6 +18,13 @@ public class FeatureFlag {
             System.out.println("this feature is disabled");
         }
 
+
+        if (!featureEnabled) {
+            System.out.println("This feature is enabled.");
+        } else {
+            System.out.println("this feature is disabled");
+        }
+
         if (featureEnabled && toggled) {
             System.out.println("toggled");
         } else {
