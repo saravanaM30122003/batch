@@ -1,0 +1,5 @@
+FeatureName,Enabled,Notes
+Login,true,
+OldFeature,false,DEPRECATED_FLAG
+NewUI,true,DEPRECATED_FLAG active
+
