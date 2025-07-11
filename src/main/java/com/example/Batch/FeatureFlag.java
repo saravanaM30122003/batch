@@ -12,6 +12,11 @@ public class FeatureFlag {
     public static void main(String[] args) {
         boolean toggled = true;
         boolean featureEnabled = FLAG.equals("DEPRECATED_FLAG"); // DEPRECATED_FLAG
+        if (featureEnabled) {
+            System.out.println("This feature is enabled.");
+        } else {
+            System.out.println("this feature is disabled");
+        }
 
 
         if (!featureEnabled) {
