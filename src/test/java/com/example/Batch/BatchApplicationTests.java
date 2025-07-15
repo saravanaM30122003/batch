@@ -10,4 +10,3 @@ class BatchApplicationTests {
 	void contextLoads() {
 	}
 
-}
