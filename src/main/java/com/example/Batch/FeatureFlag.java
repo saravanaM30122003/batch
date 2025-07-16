@@ -29,7 +29,7 @@ public class FeatureFlag {
 
         boolean result  = isFeatureEnabled(featureEnabled);
 
-        if (result) {
+        if (featureEnabled) {
             try {
                 String realmId = null;
                 if (toggled) {
