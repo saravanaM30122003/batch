@@ -11,9 +11,6 @@ public class FeatureFlag {
     @Value("${flag.key.value}")
     private static String FLAG;
 
-    public static boolean isFeatureEnabled(boolean feature){
-        return feature;
-    }
 
 
 
@@ -48,6 +45,10 @@ public class FeatureFlag {
         System.out.println(
                 "Skipping publishing BRM Event to KAFKA Topic as toggle AMO_KAFKA_ENABLED is disabled");
     }
+    public static boolean isFeatureEnabled(boolean feature){
+        return feature;
     }
+
+}
 
 
