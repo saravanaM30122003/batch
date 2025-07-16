@@ -17,30 +17,6 @@ public class FeatureFlag {
 
     private final Logger LOGGER = LoggerFactory.getLogger(FeatureFlag.class);
 
-    public void publishMessageTOKafka(Message message, String topicName) throws Exception {
-        if (FLAG.equals("DEPRECATED_FLAG")) {
-            try {
-                LOGGER.info("Publishing BRM Event to Entitlements KAFKA DLT Topic");
-                String realmId = null;
-                if (true) {
-                    System.out.println(realmId);
-                }
-                if (false) {
-                    System.out.println(topicName);
-                } else {
-                    System.out.println(message);
-                }
-            } catch (Exception e) {
-                LOGGER.error("error while publishing to kafka topic ={} ", e.getMessage());
-                throw e;
-            }
-        } else {
-            LOGGER.info("Skipping publishing BRM Event to KAFKA Topic as toggle AMO_KAFKA_ENABLED is disabled");
-        }
-        LOGGER.info(
-                "Skipping publishing BRM Event to KAFKA Topic as toggle AMO_KAFKA_ENABLED is disabled");
-    }
-
 
     public static void main(String[] args) {
         boolean toggled = true;
@@ -53,17 +29,26 @@ public class FeatureFlag {
 
         boolean result  = isFeatureEnabled(featureEnabled);
 
-        if (!featureEnabled) {
-            System.out.println("This feature is enabled.");
+        if (result) {
+            try {
+                String realmId = null;
+                if (toggled) {
+                    System.out.println(realmId);
+                }
+                if (toggled) {
+                    System.out.println("topicName");
+                } else {
+                    System.out.println("message");
+                }
+            } catch (Exception e) {
+                throw e;
+            }
         } else {
-            System.out.println("this feature is disabled");
+            System.out.println("Skipping publishing BRM Event to KAFKA Topic as toggle AMO_KAFKA_ENABLED is disabled");
         }
-
-        if (featureEnabled && toggled) {
-            System.out.println("toggled");
-        } else {
-            System.out.println("not toggled");
-        }
+        System.out.println(
+                "Skipping publishing BRM Event to KAFKA Topic as toggle AMO_KAFKA_ENABLED is disabled");
+    }
     }
 }
 
