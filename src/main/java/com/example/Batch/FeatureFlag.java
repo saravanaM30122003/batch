@@ -23,7 +23,7 @@ public class FeatureFlag {
             System.out.println("this feature is disabled");
         }
 
-        boolean result  = isFeatureEnabled(featureEnabled);
+        boolean result  = isFlag(featureEnabled);
 
         if (featureEnabled) {
             try {
@@ -45,7 +45,7 @@ public class FeatureFlag {
         System.out.println(
                 "Skipping publishing BRM Event to KAFKA Topic as toggle AMO_KAFKA_ENABLED is disabled");
     }
-    public static boolean isFeatureEnabled(boolean feature){
+    public static boolean isFlag(boolean feature){
         return feature;
     }
 
