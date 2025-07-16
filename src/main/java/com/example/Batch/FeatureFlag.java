@@ -18,7 +18,7 @@ public class FeatureFlag {
     private final Logger LOGGER = LoggerFactory.getLogger(FeatureFlag.class);
 
     public void publishMessageTOKafka(Message message, String topicName) throws Exception {
-        if (isFeatureEnabled(FLAG.equals("DEPRECATED_FLAG"))) {
+        if (FLAG.equals("DEPRECATED_FLAG")) {
             try {
                 LOGGER.info("Publishing BRM Event to Entitlements KAFKA DLT Topic");
                 String realmId = null;
