@@ -15,7 +15,6 @@ public class FeatureFlag {
         return feature;
     }
 
-    private final Logger LOGGER = LoggerFactory.getLogger(FeatureFlag.class);
 
 
     public static void main(String[] args) {
@@ -50,5 +49,5 @@ public class FeatureFlag {
                 "Skipping publishing BRM Event to KAFKA Topic as toggle AMO_KAFKA_ENABLED is disabled");
     }
     }
-}
+
 
