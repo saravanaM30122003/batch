@@ -8,24 +8,16 @@ import org.springframework.beans.factory.annotation.Value;
 public class FeatureFlag {
 
 
-    @Value("${flag.key.value}")
-    private static String FLAG;
 
 
 
 
     public static void main(String[] args) {
         boolean toggled = true;
-        boolean featureEnabled = FLAG.equals("DEPRECATED_FLAG"); // DEPRECATED_FLAG
-        if (featureEnabled) {
             System.out.println("This feature is enabled.");
-        } else {
-            System.out.println("this feature is disabled");
-        }
 
         boolean result  = isFlag(featureEnabled);
 
-        if (featureEnabled) {
             try {
                 String realmId = null;
                 if (toggled) {
@@ -33,9 +25,6 @@ public class FeatureFlag {
                 }
                 if (toggled) {
                     System.out.println("topicName");
-                } else {
-                    System.out.println("message");
-                }
             } catch (Exception e) {
                 throw e;
             }
@@ -46,7 +35,7 @@ public class FeatureFlag {
                 "Skipping publishing BRM Event to KAFKA Topic as toggle AMO_KAFKA_ENABLED is disabled");
     }
     public static boolean isFlag(boolean feature){
-        return feature;
+        return true;
     }
 
 }
